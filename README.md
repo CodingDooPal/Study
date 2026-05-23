@@ -3,7 +3,7 @@
 ## 소켓 프로그래밍 Hello world! 프로그램 구현
 ### 1) 서버
 
-'''cpp
+```cpp
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -67,4 +67,4 @@ void error_handling(const char* message)
 	fputc('\n', stderr);
 	exit(1);
 }
-'''
+```
