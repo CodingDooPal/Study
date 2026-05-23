@@ -3,7 +3,8 @@
 ## 소켓 프로그래밍 Hello world! 프로그램 구현
 ### 1) 서버
 
-'''#include <iostream>
+'''cpp
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -65,4 +66,5 @@ void error_handling(const char* message)
 	fputs(message, stderr);
 	fputc('\n', stderr);
 	exit(1);
-}'''
+}
+'''
