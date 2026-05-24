@@ -140,7 +140,7 @@ void error_handling(const char* message)
 · 31행: connect 함수호출을 통해서 서버 프로그램에 연결을 요청하고 있다.  
 
 링크 문법 테스트
-[클라 코드로 이동](https://)
+[서버 코드로 이동](./SocketProgramming_CH1/L_HelloWorld_Client.cpp)
 
 
 
