@@ -4,7 +4,8 @@
 ![Platform](https://img.shields.io/badge/Platform-Windows-blue)
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 
-> 의문의 공간에 홀로 갇힌 당신. 흩어진 단서들을 모으고 조합하여 탈출하라.
+> 의문의 공간[^1]에 홀로 갇힌 당신. 흩어진 단서들을 모으고 조합하여 탈출하라.
+[^1]: ㅁㄴㅇㄹ
 
 <p align="center">
   <img src="docs/screenshot.png" width="700"/>
