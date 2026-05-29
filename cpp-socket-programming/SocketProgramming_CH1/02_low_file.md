@@ -42,6 +42,8 @@ void error_handling(string_view message) {
 이 파일의 데이터는 모두 지워져 버린다.  
 · 17행: fd에 저장된 파일 디스크립터에 해당하는 파일에 buf에 저장된 데이터를 전송하고 있다.  
 
+---
+
 ### 2) 파일에 저장된 데이터 읽기
 ```cpp
 #include <iostream>
@@ -84,6 +86,8 @@ void error_handling(string_view message) {
 · 13행: 파일 data.txt를 읽기 전용으로 열고 있다.  
 · 18행: read 함수를 이용해서 11행에 선언된 배열 buf에 읽어 들인 데이터를 저장하고 있다.  
 
+---
+
 ### 3) 파일 디스크립터와 소켓
 ```cpp
 #include <iostream>
@@ -113,3 +117,10 @@ int main(void)
 ```
 · 9~11행: 하나의 파일과 두 개의 소켓을 생성하고 있다.  
 · 13~15행: 앞서 생성한 파일 디스크립터의 정수 값을 출력하고 있다.  
+
+---
+
+바로가기  
+[파일 열기 코드로 이동](./low_open.cpp)
+[파일 읽기 코드로 이동](./low_read.cpp)
+[파일 디스크립터와 소켓 코드로 이동](./fd_seir.cpp)
