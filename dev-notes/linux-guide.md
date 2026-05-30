@@ -184,26 +184,81 @@ ex) 2222번 포트로 접속 시
 `ForwardAgent yes`
 <br><br>
 
-
-
 ### 개발 작업
 ---
+- 프로세스/모니터링  
 
+**1\. 프로세스 검색**  
+`linux\> ps aux | grep \[name\]`
+<br><br>
+
+**2\. 프로세스 강제 종료**  
+`linux\> kill -9 \[PID\]`
+<br><br>
+
+**3\. 실시간 리소스 모니터링**  
+`linux\> top|htop`
+<br><br>
+
+**4\. 프로세스 목록/종료**  
+`win\> tasklist|taskkill`
+<br><br>
+
+- 네트워크  
+
+**1\. 열린 포트 확인**  
+`linux\> ss -tuln`
+<br><br>
+
+**2\. 열린 포트 + PID 확인**  
+`win\> netstat -ano`
+<br><br>
+
+**3\. 연결 확인**  
+`all\> ping IP`
+<br><br>
+
+**4\. HTTP 응답 확인**  
+`curl http://IP_addr:PORT`
+<br><br>
+
+- 빌드/컴파일(C++)  
+
+**1\. C++ 컴파일**  
+`linux\> g++ main.cpp -0 main`
+<br><br>
+
+**2\. 디버그 심볼 포함 빌드**  
+`linux\> g++ main.cpp -o main -g`
+<br><br>
+
+**3\. Makefile 기반 빌드**  
+`linux\> make`
+<br><br>
+
+**4\. 빌드된 바이너리 실행**  
+`linux\> ./main`
+<br><br>
+
+- GIT  
+
+**1\. 변경 사항 확인**  
+`all\> git status`
+<br><br>
+
+**2\. 전체 스테이징 후 커밋**  
+`all\> git add . && git commit`  
+add 뒤에 원하는 디렉터리나 파일을 지정할 수 있다.  
+commit에 -m 옵션을 붙여 커밋 메시지를 추가할 수 있다.  
+<br><br>
+
+**3\. 커밋 히스토리 간략 확인**  
+`all\> git log --oneline`
+<br><br>
+
+**4\. 변경된 내용 diff 확인**  
+`all\> git diff`
+<br><br>
 
 ### 기타
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
