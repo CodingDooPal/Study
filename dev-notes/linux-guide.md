@@ -19,125 +19,125 @@ ex)
 ---
 - 탐색/이동  
 
-1\. 상위 폴더로 이동  
+**1\. 상위 폴더로 이동**  
 `all\> cd ..`
 <br><br>
 
-2\. 두 단계 위로 이동  
+**2\. 두 단계 위로 이동**  
 `all\> cd ../..`
 <br><br>
 
-3\. 홈 디렉터리로 이동  
+**3\. 홈 디렉터리로 이동**  
 `all\> cd ~`
 <br><br>
 
-4\. 숨김 파일 포함 목록  
+**4\. 숨김 파일 포함 목록**  
 `linux\> ls -la`
 <br><br>
 
-5\. 파일 목록 표시  
+**5\. 파일 목록 표시**  
 `win\> dir`
 <br><br>
 
-6\. 현재 경로 출력  
+**6\. 현재 경로 출력**  
 `linux\> pwd`
 <br><br>
 
-- 복사/이동/삭제  
+- **복사/이동/삭제**  
 
-src/ => 원본 파일 또는 디렉터리 경로
+src/ => 원본 파일 또는 디렉터리 경로  
 dst/ => 결과 파일 또는 디렉터리 경로
 <br><br>
 
-1\. 폴더 통째로 복사  
+**1\. 폴더 통째로 복사**  
 `linux\> cp -r src/ dst/`
 <br><br>
 
-2\. 폴더 하위까지 복사  
+**2\. 폴더 하위까지 복사**  
 `win\> xcopy src dst /E /I`  
 /E: 비어 있는 경우를 포함하여 디렉터리와 하위 디렉터리를 복사한다.  
 /I: 대상을 찾을 수 없고 두 파일 이상 복사하면 대상을 디렉터리로 지정한다.
 <br><br>
 
-3\. 파일 이동 또는 이름 변경  
+**3\. 파일 이동 또는 이름 변경**  
 `all\> mv\|move src/ dst/`
 <br><br>
 
-4\. 폴더 강제 삭제(주의)  
+**4\. 폴더 강제 삭제(주의)**  
 `linux\> rm -rf src/`
 <br><br>
 
-5\. 폴더 강제 삭제
+**5\. 폴더 강제 삭제**
 `win\> rmdir /S /Q src/`  
 /S: 지정된 디렉터리와 그 안의 모든 디렉터리 및 파일을 지운다.  
 /Q: 지우는데 문제가 없으면 묻지 않는다.
 <br><br>
 
-- 검색/확인  
+- **검색/확인**  
 
-1\. 현재 위치서 파일 검색  
+**1\. 현재 위치서 파일 검색**  
 `linux\> find . -name "src/"`
 <br><br>
 
-2\. 파일 내용에서 문자열 검색  
+**2\. 파일 내용에서 문자열 검색**  
 `linux\> grep -r "\[내용\]" src/`
 <br><br>
 
-3\. 파일 내용 출력  
+**3\. 파일 내용 출력**  
 `linux\> cat src/`
 <br><br>
 
-4\. 파일 실시간 모니터링  
+**4\. 파일 실시간 모니터링**  
 `linux\> tail -f src/`
 <br><br>
 
-5\. 파일 내용 출력  
+**5\. 파일 내용 출력**  
 `win\> type src/`
 <br><br>
 
-- 권한/소유자  
+- **권한/소유자**  
 
-1\. 실행 권한 부여  
+**1\. 실행 권한 부여**  
 `linux\> chmod 755 src/`  
 사용자(User), 그룹(Group), 다른사용자(Other)의 권한 설정  
 읽기(Read): 4, 쓰기(Write): 2, 실행(Execute): 1  
 숫자를 더하는 형식으로 권한을 설정할 수 있다.
 <br><br>
 
-2\. 소유자 변경  
+**2\. 소유자 변경**  
 `linux\> chown user:group src/`  
 왼쪽에서 오른쪽으로 파일의 소유자를 변경한다.
 <br><br>
 
-3\. 권한 확인  
+**3\. 권한 확인**  
 `linux\> ls -l`
 <br><br>
 
-### SSH & SCP
+### **SSH & SCP**
 ---
-- 기본 접속  
+- **기본 접속**  
 
-1\. SSH 접속
+**1\. SSH 접속**  
 `all\> ssh user@IP_addr`
 <br><br>
 
-2\. config 별칭으로 접속  
+**2\. config 별칭으로 접속**  
 ex) MyServer라고 설정했다면  
 `all\> ssh MyServer`
 <br><br>
 
-3\. 포트 지정 접속  
+**3\. 포트 지정 접속**  
 ex) 2222번 포트로 접속 시  
 `all\> ssh -p 2222 user@IP_addr`
 <br><br>
 
-4\. SSH 세션 종료  
+**4\. SSH 세션 종료**  
 `all\> exit`
 <br><br>
 
-- 키 관리  
+- **키 관리**  
 
-1\. SSH 키 생성  
+**1\. SSH 키 생성**  
 `all\> ssh-keygen -t ed25519`  
 주요 SSH 키 알고리즘 종류  
 1. RSA(-t rsa -b 4096)  
@@ -145,43 +145,43 @@ ex) 2222번 포트로 접속 시
 3. ECDSA(-t ecdsa)
 <br><br>
 
-2\. 공개키 서버에 등록  
+**2\. 공개키 서버에 등록**  
 `linux\> ssh-copy-id user@IP_addr`
 <br><br>
 
-3\. 공개키 내용 확인(ed25519 기준)  
+**3\. 공개키 내용 확인(ed25519 기준)**  
 `all\> cat ~/.ssh/id_ed25519.pub`
 <br><br>
 
-- SCP 파일 전송  
+- **SCP 파일 전송**  
 
-1\. Local -> Server 파일 전송  
+**1\. Local -> Server 파일 전송**  
 `all\> scp src/ user@IP_addr:dst/`
 <br><br>
 
-2\. Server -> Local 다운로드  
+**2\. Server -> Local 다운로드**  
 `all\> scp user@IP_addr:src/ dst/`
 <br><br>
 
-3\. 폴더 통째로 전송  
+**3\. 폴더 통째로 전송**  
 `all\> scp -r src/ user@IP_addr:dst/`
 <br><br>
 
-- CONFIG 설정(~/.SSH/CONFIG)  
+- **CONFIG 설정(~/.SSH/CONFIG)**  
 
-1\. 서버 별칭 지정(MyServer로 지정 시)  
+**1\. 서버 별칭 지정(MyServer로 지정 시)**  
 `Host MyServer`
 <br><br>
 
-2\. 실제 접속 IP  
+**2\. 실제 접속 IP**  
 `HostName IP_addr`
 <br><br>
 
-3\. 접속 유저명  
+**3\. 접속 유저명**  
 `User username`
 <br><br>
 
-4\. 키 전달(점프 서버용)  
+**4\. 키 전달(점프 서버용)**  
 `ForwardAgent yes`
 <br><br>
 
@@ -190,7 +190,7 @@ ex) 2222번 포트로 접속 시
 ### 개발 작업
 ---
 
-정
+
 ### 기타
 ---
 
