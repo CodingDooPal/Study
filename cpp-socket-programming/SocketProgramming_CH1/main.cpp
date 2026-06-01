@@ -1,57 +1,24 @@
 #include <arpa/inet.h>
-#include <iostream>
 #include <stdlib.h>
+#include <iostream>
 #include <string.h>
-#include <sys/socket.h>
-#include <unistd.h>
-
 using namespace std;
 
-void error_handling(string_view message);
-
-
 int main(int argc, char *argv[]) {
-    int sock;
-    struct sockaddr_in serv_addr;
-    char message[30];
-    int str_len = 0;
-    int idx = 0, read_len = 0;
+    struct sockaddr_in addr1{}, addr2{};
+    char* str_ptr{nullptr};
+    string str_arr{};
 
-    if (argc != 3) {
-        cout << "Usage: " << argv[0] << "<IP> <port>" << endl;
-        exit(1);
-    }
-    
-    sock = socket(PF_INET, SOCK_STREAM, 0);
-    if(sock == -1) {
-        error_handling("socket() error!");
-    }
+    addr1.sin_addr.s_addr = htonl(0x1020304);
+    addr2.sin_addr.s_addr = htonl(0x1010101);
 
-    memset(&serv_addr, 0, sizeof(serv_addr));
-    serv_addr.sin_family = AF_INET;
-	serv_addr.sin_addr.s_addr = inet_addr(argv[1]);
-	serv_addr.sin_port = htons(atoi(argv[2]));
+    str_ptr = inet_ntoa(addr1.sin_addr);
+    str_arr = str_ptr;
+    cout << "Dotted-Decimal notation1: " << str_ptr << endl; 
 
-    if (connect(sock, (struct sockaddr*) & serv_addr, sizeof(serv_addr)) == -1){
-		error_handling("connect() error!");
-	}
+    inet_ntoa(addr2.sin_addr);
+    cout << "Dotted-Decimal notation2: " << str_ptr << endl; 
+    cout << "Dotted-Decimal notation3: " << str_arr << endl; 
 
-    while(read_len = read(sock, &message[idx++], 1)){
-        if(read_len == -1) {
-            error_handling("read() error!");
-        }
-
-        str_len += read_len;
-    }
-
-    cout << "Message from server: " << message << endl;
-    cout << "Function read call count: " << str_len << endl;
-    close(sock);
     return 0;
-}
-
-void error_handling(string_view message)
-{
-	cout << message << endl;
-	exit(1);
 }
