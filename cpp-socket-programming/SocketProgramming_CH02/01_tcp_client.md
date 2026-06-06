@@ -150,5 +150,5 @@ socket 함수호출을 통해서 TCP 소켓을 생성하고 있다. 이제 이 �
 
 ---
 바로가기  
-[서버 코드로 이동](./src/tcp_client.cpp)  
-[클라이언트 코드로 이동](./src/tcp_client_win.cpp)
+[리눅스 코드로 이동](./src/tcp_client.cpp)  
+[윈도우 코드로 이동](./src/tcp_client_win.cpp)
