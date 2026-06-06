@@ -50,8 +50,6 @@ g++ [소스코드] -o [실행파일 이름]
 | 1        | 표준출력: Standard Output |
 | 2        | 표준에러: Standard Error  |
 
-<br><br>
-
 - **파일 열기**
 ```cpp
 int open(const char *path, int flag);
@@ -66,8 +64,6 @@ flag에 전달할 수 있는 값과 그 의미는 다음과 같으며, 하나 �
 | O_RDONLY | 읽기 전용으로 파일 오픈           |
 | O_WRONLY | 쓰기 전용으로 파일 오픈           |
 | O_RDWR   | 읽기, 쓰지 겸용으로 파일 오픈       |
-
-<br><br>
 
 - **파일 닫기**
 ```cpp
