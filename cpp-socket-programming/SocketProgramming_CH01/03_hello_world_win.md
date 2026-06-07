@@ -156,5 +156,5 @@ void ErrorHandling(string message) {
 ---
 
 바로가기  
-[서버 코드](./hello_server_win.cpp)  
-[클라이언트 코드](./hello_client_win.cpp)  
+[서버 코드](./src/hello_server_win.cpp)  
+[클라이언트 코드](./src/hello_client_win.cpp)  

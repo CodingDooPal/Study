@@ -121,6 +121,7 @@ int main(void)
 ---
 
 바로가기  
-[파일 열기 코드로 이동](./low_open.cpp)  
-[파일 읽기 코드로 이동](./low_read.cpp)  
-[파일 디스크립터와 소켓 코드로 이동](./fd_seir.cpp)  
+[파일 열기 코드로 이동](./src/low_open.cpp)  
+[파일 읽기 코드로 이동](./src/low_read.cpp)  
+[파일 디스크립터와 소켓 코드로 이동](./src/fd_seir.cpp)  
+
