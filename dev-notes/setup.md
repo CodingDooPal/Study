@@ -26,6 +26,7 @@ Visual Studio Code와 VM 가상 머신을 SSH로 연결하여 Host에서 원격�
 **2.**
 
 상단 검색창에 `"Remote - SSH"`를 검색하면 아래와 같이 SSH 관련 확장들이 나타날 것이다.
+
 ![Search_Result.png](image/setup_image/Search_Result.png)
 
 여기서 상단에 있는 Remote-SSH 확장을 설치 후 프로그램을 재실행 한다.
