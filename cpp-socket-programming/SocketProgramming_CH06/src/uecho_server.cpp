@@ -7,7 +7,7 @@
 using namespace std;
 
 #define BUF_SIZE 30
-void error_handling(char *message);
+void error_handling(string_view message);
 
 int main(int argc, char *argv[]) {
     int serv_sock{};
@@ -49,7 +49,7 @@ int main(int argc, char *argv[]) {
     return 0;
 }
 
-void error_handling(char* message) {
+void error_handling(string_view message) {
     cout << message << endl;
     exit(1);
 }
