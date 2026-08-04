@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 
     while (true) {
         cout << "Input message(Q to quit): ";
-        cin >> message;
+        getline(cin, message);
 
         if (message.compare("q") == 0 || message.compare("Q") == 0) {
             break;
