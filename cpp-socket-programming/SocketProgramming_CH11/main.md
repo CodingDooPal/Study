@@ -47,3 +47,5 @@ CH 10에서 제시한 에코 서버를 확장해서 클라이언트가 전송하
 이를 위해서 별도의 프로세스를 생성하고, 클라이언트에게 서비스를 제공하는 프로세스로부터 문자열 정보를 수신하게끔 할 수 있다. 그리고 이 과정에서 파이프를 사용할 것이다.
 
 [예제 코드](https://github.com/CodingDooPal/Study/tree/main/cpp-socket-programming/SocketProgramming_CH11/src/echo_storeserv.cpp)
+
+문자열은 생성된 echomsg.txt 파일을 열어서 확인할 수 있다.
