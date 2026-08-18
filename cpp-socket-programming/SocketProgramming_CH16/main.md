@@ -62,7 +62,7 @@ shutdown(sock, SHUT_WR);
 #include <unistd.h>
 
 int dup(int fildes);
-int dup(int fildes, int fildes2);
+int dup2(int fildes, int fildes2);
 // 성공 시 복사된 파일 디스크립터, 실패 시 -1 반환
 ```
 
