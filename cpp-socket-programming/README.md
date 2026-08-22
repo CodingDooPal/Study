@@ -72,4 +72,4 @@
 
 [CH 23. IOCP(Input Output Completion Port)]()
 
-[CH 24. HTTP 서버 제작하기]()
+CH 24. [HTTP 서버 제작하기]()
