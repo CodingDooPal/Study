@@ -87,10 +87,11 @@ private:
 
 ```cpp
 List() {
-    // head와 tail에 더미 노드를 생성
-    head = new Node;
-    tail = new Node;
-    cur = nullptr; // 현재 가리키는 대상이 없으므로 nullptr
+	// head와 tail에 더미 노드를 생성
+	head = new Node;
+	tail = new Node;
+	cur = nullptr; // 현재 가리키는 대상이 없으므로 nullptr
+	listInit(); // 리스트를 초기 상태로 만든다.
 }
 ```
 
