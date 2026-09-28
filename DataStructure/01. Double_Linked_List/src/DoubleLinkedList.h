@@ -1,10 +1,7 @@
-#pragma once
+#ifndef DOUBLE_LINKED_LIST_H
+#define DOUBLE_LINKED_LIST_H
 
 #include <iostream>
-#include <vector>
-
-#ifndef __DB_LINKED_LIST_H__
-#define __DB_LINKED_LIST_H__
 
 template<typename T>
 class List {
@@ -18,10 +15,7 @@ public:
 	}
 
 	~List() {
-		if (!isEmpty()) {
-			deleteList();
-		}
-
+		deleteList();
 		delete head;
 		delete tail;
 
@@ -30,11 +24,7 @@ public:
 
 	bool isEmpty() {
 		// 리스트가 비어있으면 (head가 tail을 가리키면) true 반환
-		if (head->next == tail) {
-			return true;
-		}
-
-		return false;
+		return head->next == tail;
 	}
 
 	void insertNode(T data) {
@@ -143,7 +133,5 @@ private:
 		return node;
 	}
 };
-
-void DBLinkedList();
 
 #endif

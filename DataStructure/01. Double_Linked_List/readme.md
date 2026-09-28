@@ -4,7 +4,7 @@
 
 - [이론 설명 바로가기]()
 
-이 글은 필자가 직접 구현한 연결 리스트의 구조를 설명하는 글이다. 개인의 학습 목적으로 작성되었기 때문에 문장과 구현 과정에서 어색하거나 오류가 있을 수 있다.
+이 글은 필자가 직접 구현한 연결 리스트의 구조를 설명하는 글입니다. 개인의 학습 목적으로 작성되었기 때문에 오류가 있을 수 있습니다.
 
 ## 리스트의 구조
 
@@ -28,6 +28,8 @@ head와 tail 포인터는 각각 더미 노드를 생성해서 가리키도록 �
 
 ## ADT 정의
 
+\- ADT
+
 1. bool isEmpty();
     - 리스트에 저장된 데이터가 있는지 없는지 판단한다.
     - 데이터가 없으면 true, 존재하면 false를 반환한다.
@@ -42,7 +44,7 @@ head와 tail 포인터는 각각 더미 노드를 생성해서 가리키도록 �
 
 4. bool deleteList();
     - 리스트에 저장된 모든 데이터를 삭제한다.
-    - 데이터 삭제 후 listInit() 함수로 리스트를 초기 상태로 만든다.
+    - 데이터 삭제 후 listInit 함수로 리스트를 초기 상태로 만든다.
     - 성공하면 true, 실패하면 false를 반환한다.
 
 \- 추가적인 함수
@@ -57,7 +59,7 @@ head와 tail 포인터는 각각 더미 노드를 생성해서 가리키도록 �
 
 ## 기능 구현
 
-### 0. Double Linked List 클래스 정의
+### 0. List 클래스 정의
 
 클래스의 기본적인 형태는 다음과 같다.
 
@@ -109,7 +111,7 @@ List() {
 
 ### 1. Node 구조체 정의
 
-Node 구조체는 리스트에 저장되는 데이터 단위이다. Node 구조체에는 다음과 같은 요소들이 정의되어야 한다.
+Node 구조체는 리스트에 저장되는 데이터 단위이다. 리스트의 Node 구조체에는 다음과 같은 요소들이 정의되어야 한다.
 
 1. 데이터를 받을 공간
 2. 다음 노드를 가리키는 포인터
@@ -136,7 +138,7 @@ void listInit() {
 	// head와 tail 포인터를 연결
 	head->next = tail;
 	tail->prev = head;
-	numOfData = 0; // 데이터의 수 = 0
+	numOfData = 0; // 저장된 데이터의 수 = 0
 }
 ```
 
@@ -148,12 +150,9 @@ isEmpty 함수는 리스트에 데이터가 존재하는지 확인한다. 필자
 
 ```cpp
 bool isEmpty() {
-	if (head->next == tail) {
-		return true;
-	}
-
-	return false;
-} 
+	// 리스트가 비어있으면 (head가 tail을 가리키면) true 반환
+	return head->next == tail;
+}
 ```
 
 ---
@@ -219,6 +218,8 @@ void insertNode(T data) {
 	}
 	node->next = tail;
 	tail->prev = node;
+
+	++numOfData; // 노드가 삽입되었기 때문에 데이터의 수를 +1
 }
 ```
 
@@ -255,6 +256,7 @@ bool deleteNode(T data) {
 			deleteNode->next->prev = deleteNode->prev;
 			deleteNode->prev->next = deleteNode->next;
 			delete deleteNode;
+			--numOfData; // 노드가 삭제되었기 때문에 데이터의 수를 -1
 		}
 	}
 
@@ -316,14 +318,11 @@ void printList() {
 
 리스트 객체가 소멸할 때, 리스트가 가지고 있던 동적 할당된 메모리를 모두 반환하고 소멸되어야 한다. 만약 그냥 소멸된다면 메모리 누수(Memory Leak)이 발생하기 때문에 꼭 필요한 작업이다.
 
-isEmpty 함수를 호출하여 데이터가 있다면 deleteList 함수를 호출하여 모든 메모리를 반환한다. 이후 head와 tail에 할당된 메모리까지 반환하면 된다.
+먼저 deleteList 함수를 호출하여 모든 메모리를 반환한다. 이후 head와 tail에 할당된 더미까지 반환하면 된다.
 
 ```cpp
 ~List() {
-	if (!isEmpty()) {
-		deleteList();
-	}
-
+	deleteList();
 	delete head;
 	delete tail;
 
